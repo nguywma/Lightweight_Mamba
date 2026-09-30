@@ -1,0 +1,1 @@
+python test.py --weights  /home/manh/drone/Vi2ENav/src/perception/ssc-network/outputs/DSC-AFC_SemanticKITTI_1209_170116/chkpt/best-metric/weights_epoch_076.pth --dset_root /home/manh/drone/datasets/semantic_kitti/dataset/sequences --out_path /home/manh/drone/Vi2ENav/src/perception/ssc-network/predictions

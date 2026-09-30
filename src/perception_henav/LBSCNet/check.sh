@@ -1,0 +1,1 @@
+python /home/manh/drone/Vi2ENav/src/perception/ssc-network/semantic-kitti-api/validate_submission.py --task completion /home/manh/drone/Vi2ENav/src/perception/ssc-network/predictions/submission.zip /home/manh/drone/datasets/semantic_kitti/dataset

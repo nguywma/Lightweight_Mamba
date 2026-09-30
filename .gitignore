@@ -1,0 +1,61 @@
+# ROS / Catkin
+build/
+devel/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+*.log
+
+# Build / temporary files
+*.o
+*.so
+*.a
+*.out
+
+# Results / experiments
+results_*/
+prediction/
+output/
+
+# Model weights
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.engine
+
+# Local environments
+.venv/
+venv/
+env/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific generated files
+grid_map_2cpp
+seeds.txt
+build.log
+
+# Generated test / inference outputs
+results_lbsc/
+results_lbsc2/
+results_mamba/
+results_no_pred/
+results_no_pred2/
+build/
+devel/
+*.log
+.vscode/

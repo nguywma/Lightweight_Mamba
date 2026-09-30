@@ -1,0 +1,1 @@
+python3 /home/manh/drone/AGRNav/src/perception/SCONet/network/validate.py --weights /home/manh/drone/AGRNav/src/perception/SCONet/weight/weights_epoch_074.pth  --dset_root /home/manh/drone/datasets/semantic_kitti
