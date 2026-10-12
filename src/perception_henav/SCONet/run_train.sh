@@ -1,0 +1,1 @@
+python3 /home/manh/drone/AGRNav/src/perception/SCONet/network/train.py --cfg /home/manh/drone/AGRNav/src/perception/SCONet/SSC_configs/routines/SCONet.yaml --dset_root /home/manh/drone/datasets/semantic_kitti

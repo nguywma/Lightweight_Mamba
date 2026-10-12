@@ -1,0 +1,3 @@
+#Artifacts from vscode
+.vscode/*
+px4_controllers/geometric_controller/glog/*

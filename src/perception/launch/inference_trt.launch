@@ -1,0 +1,11 @@
+<launch>
+  <arg name="weights_file" default="$(find perception)/SCONet/weights/weights_epoch_037.pth" />
+  <arg name="dataset_root" default="$(find perception)/raw_data/voxels" />
+  <arg name="output_path" default="$(find perception)/SCONet/prediction" />
+
+  <node name="inference_ros" pkg="ocnet_ros" type="inference_trt.py" output="screen">
+    <param name="weights_file" value="$(arg weights_file)" />
+    <param name="dataset_root" value="$(arg dataset_root)" />
+    <param name="output_path" value="$(arg output_path)" />
+  </node>
+</launch>

@@ -1,0 +1,53 @@
+count: 3
+goal : 3
+
+s1 :
+  type: "t"
+  height: 3.0
+  timeout: 30.0
+  failsafe: 8
+
+s2 :
+  type: "m"
+  count: 1
+  timeout: 60.0
+  t1 : [21.0064905,105.8433039,25.0]
+  failsafe: 8
+
+s3 :
+  type: "k"
+  count: 2
+  t1 : [50.0,14.0,1.0]
+  t2 : [15.0,0.5,1.0]
+
+  height: 1.0
+  timeout: 30.0
+  failsafe: 8
+
+s5 :
+  type: "t"
+  height: 3.0
+  timeout: 30.0
+  failsafe: 8
+
+s6 :
+  type: "a"
+  count: 1
+  timeout: 60.0
+  t1 : [-5,-5,10.0]
+  failsafe: 8
+
+s7 :
+  type: "k"
+  count: 2
+  t1 : [50.0,5,1.0]
+  t2 : [10.0,0.5,1.0]
+
+  height: 1.0
+  timeout: 30.0
+  failsafe: 8
+
+s8 :
+  type: "l"
+  failsafe: 0
+  timeout: 60.0

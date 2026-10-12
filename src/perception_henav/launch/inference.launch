@@ -1,0 +1,36 @@
+<launch>
+  <arg name="weights_file" default="$(find perception_henav)/LBSCNet/weights/weights_epoch_065.pth" />
+  <arg name="dataset_root" default="$(find perception_henav)/raw_data/voxels" />
+  <arg name="output_path" default="$(find perception_henav)/LBSCNet/prediction" />
+
+  <!-- odom_body_frame: flu for /visual_slam/odom (planner's vins_odom_to_body
+       relay), optical for raw /vins_fusion/odometry. ground_z must match the
+       floor height in world (the relay's world_z_offset puts it at 0). -->
+  <arg name="odom_topic" default="/visual_slam/odom" />
+  <arg name="odom_body_frame" default="flu" />
+  <arg name="ground_z" default="0.0" />
+
+  <node name="inference_ros" pkg="perception_henav" type="inference_ros_lbscnet.py" output="screen">
+    <param name="weights_file" value="$(arg weights_file)" />
+    <param name="dataset_root" value="$(arg dataset_root)" />
+    <param name="output_path" value="$(arg output_path)" />
+    <param name="odom_topic" value="$(arg odom_topic)" />
+    <param name="odom_body_frame" value="$(arg odom_body_frame)" />
+    <param name="ground_z" value="$(arg ground_z)" />
+  </node>
+</launch>
+
+
+<!-- 
+<launch>
+ 
+  <arg name="weights_file" default="$(find perception_henav)/SCONet/weights/weights_epoch_037.pth" />
+  <arg name="dataset_root" default="$(find perception_henav)/raw_data/voxels" />
+  <arg name="output_path" default="$(find perception_henav)/SCONet/prediction" />
+
+  <node name="inference_ros" pkg="perception" type="inference_ros_sconet.py" output="screen">
+    <param name="weights_file" value="$(arg weights_file)" />
+    <param name="dataset_root" value="$(arg dataset_root)" />
+    <param name="output_path" value="$(arg output_path)" />
+  </node>
+</launch> -->

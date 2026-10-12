@@ -1,0 +1,50 @@
+<!-- <launch>
+  <arg name="weights_file" default="$(find perception)/LBSCNet/weights/weights_epoch_071.pth" /> 
+  <arg name="dataset_root" default="$(find perception)/raw_data/voxels" />
+  <arg name="output_path" default="$(find perception)/LBSCNet/prediction" />
+
+  <node name="inference_ros" pkg="perception" type="inference_ros_lbscnet.py" output="screen">
+    <param name="weights_file" value="$(arg weights_file)" />
+    <param name="dataset_root" value="$(arg dataset_root)" />
+    <param name="output_path" value="$(arg output_path)" />
+  </node>
+</launch> -->
+
+<launch>
+  <arg name="weights_file" default="$(find perception)/LBSCNet/weights/weights_epoch_071.pth" /> 
+  <arg name="dataset_root" default="$(find perception)/raw_data/voxels" />
+  <arg name="output_path" default="$(find perception)/LBSCNet/prediction" />
+  <arg name="conf_threshold" default="0.6" />
+
+  <!-- odom_body_frame: flu for /visual_slam/odom (planner's vins_odom_to_body
+       relay), optical for raw /vins_fusion/odometry. ground_z must match the
+       floor height in world (the relay's world_z_offset puts it at 0). -->
+  <arg name="odom_topic" default="/visual_slam/odom" />
+  <arg name="odom_body_frame" default="flu" />
+  <arg name="ground_z" default="0.0" />
+
+  <node name="inference_ros" pkg="perception" type="inference_ros_lbscnet.py" output="screen">
+    <param name="weights_file" value="$(arg weights_file)" />
+    <param name="dataset_root" value="$(arg dataset_root)" />
+    <param name="output_path" value="$(arg output_path)" />
+    <param name="conf_threshold" value="$(arg conf_threshold)" />
+    <param name="odom_topic" value="$(arg odom_topic)" />
+    <param name="odom_body_frame" value="$(arg odom_body_frame)" />
+    <param name="ground_z" value="$(arg ground_z)" />
+  </node>
+</launch>
+
+
+<!-- 
+<launch>
+ 
+  <arg name="weights_file" default="$(find perception)/SCONet/weights/weights_epoch_037.pth" />
+  <arg name="dataset_root" default="$(find perception)/raw_data/voxels" />
+  <arg name="output_path" default="$(find perception)/SCONet/prediction" />
+
+  <node name="inference_ros" pkg="perception" type="inference_ros_sconet.py" output="screen">
+    <param name="weights_file" value="$(arg weights_file)" />
+    <param name="dataset_root" value="$(arg dataset_root)" />
+    <param name="output_path" value="$(arg output_path)" />
+  </node>
+</launch> -->

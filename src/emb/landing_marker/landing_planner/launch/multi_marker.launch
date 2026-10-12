@@ -1,0 +1,26 @@
+<launch>
+  <node pkg="marker_planner" type="marker_planner_node" name="marker_planner" output="screen">
+  </node>
+  <node pkg="aruco_gridboard" type="aruco_gridboard" name="aruco_gridboard" output="screen" >
+    <param name="board_path" value="$(find aruco_gridboard)/data/layout.yaml" />
+    <param name="detector_param_path" value="$(find aruco_gridboard)/data/detector_params.yml" />
+    <param name="debug_display" value="false" />
+   
+    <remap from="/aruco_gridboard/camera_info" to="/camera/color/camera_info"/>
+    <remap from="/aruco_gridboard/image_raw" to="/camera/color/image_raw"/>
+  </node>
+
+  <node name="whycon" type="whycon" pkg="whycon" output="screen">
+    <param name="name" value="whycon"/>
+    <param name="targets" value="1"/>
+    <param name="max_refine" value="5"/>
+    <param name="max_attempts" value="5"/>
+    <param name="outer_diameter" value="1.0"/>
+    <param name="inner_diameter" value="0.4"/>
+    <param name="max_distance" value="2.0"/>
+    <param name="offset_x" value="0.0"/>
+    <param name="offset_y" value="0.0"/>
+  </node>
+
+
+</launch>

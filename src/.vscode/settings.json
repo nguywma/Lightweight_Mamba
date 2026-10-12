@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "bitset": "cpp",
+        "memory": "cpp",
+        "random": "cpp",
+        "future": "cpp",
+        "optional": "cpp",
+        "algorithm": "cpp",
+        "thread": "cpp",
+        "__locale": "cpp",
+        "locale": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "semaphore": "cpp",
+        "ratio": "cpp",
+        "core": "cpp",
+        "specialfunctions": "cpp"
+    }
+}
